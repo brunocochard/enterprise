@@ -1,0 +1,10 @@
+{% from "common/form_macros.html" import render_field, render_submit_field %}
+
+<h3> {{ choice_title }} </h3><br>
+
+{% for name, url_name in service_types.items() %}
+<div class="col-lg-2 col-md-2 step-item">
+    <div ><img src={{ url_name }} class="center" onClick="select_step(event)" onmouseover="show_border(event)" onmouseout="hide_border(event)"></div>
+    <div class="icon-title">{{ name }}</div>
+</div>
+{% endfor %}
