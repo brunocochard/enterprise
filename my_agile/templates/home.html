@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %} Home page {% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        	<div class="col-md-6  text-center"><h2>My active tasks</h2></div>
+        	<div class="col-md-6  text-center"><h2>My pending tasks</h2></div>
+	</div>
+
+    <div class="row">
+        	<div class="col-md-6">{{ data[0] | safe}}</div>
+        	<div class="col-md-6">{{ data[1] | safe}}</div>
+	</div>
+
+    <p><a href="#" id="enable_notification">Click here to allow notifications on Chrome </a></p>
+    <p><a href="#" id="disable_notification">Click here to block notifications </a></p>
+
+{% endblock %}
+
+
