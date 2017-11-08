@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <form method="POST" action="{{ url_for('projects') }}">
+        {{ form.hidden_tag() }}
+        {{ wtf.form_field(form.list_project) }}
+        {{ wtf.form_field(form.select_project) }}
+        <table border = "1">
+        {% for item in list_items %}
+            <tr>
+                <th >{{ item.title }}</th>
+                <td >{{ item.state }}</td>
+                <td >{{ item.created }}</td>
+                <td >{{ item.closed }}</td>
+                <td >{{ item.area }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </form>
+{% endblock %}
