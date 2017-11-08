@@ -1,0 +1,357 @@
+{% extends "common/page_base.html" %}
+
+{% block styles %}
+    {{super()}}
+    <!-- SmartWizard CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/smartwizard/css/smart_wizard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/smartwizard/css/smart_wizard_theme_circles.css') }}">
+{% endblock %}
+
+{% block content %}
+{% from "common/form_macros.html" import render_field, render_submit_field %}
+<form action="{{ url_for('service_request.create_service_request') }}" method="POST" id = "request-form" novalidate data-toggle="validator" formnovalidate class="form" role="form" enctype="multipart/form-data">
+    <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- <h3 class="page-header">Dashboard</h3> -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> New Service Request
+                            <div class="pull-right">
+                                    <!-- <button type="button" class="btn btn-default btn-xs" > -->
+                                        Cancel Request
+                                    </button>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        More actions
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right" role="menu">
+                                        <li><a href="#">Request Time Report</a>
+                                        </li>
+                                        <li><a href="#">Request Cost Report</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Contact CAB</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="smartwizard">
+                                <ul>
+                                    {{ form.hidden_tag() }}
+                                    <li id="display-step-1">
+                                        <a href="#step-1" class="col-lg-2 col-md-2" data-content-url="{{ url_for('service_request.get_service_types') }}"><div>1</div></a>
+                                    </li>
+                                    <li id="display-step-2">
+                                        <a href="#step-2" class="col-lg-2 col-md-2" data-content-url="{{ url_for('service_request.get_service_jobs') }}">2</a>
+                                    </li>
+                                    <li id="display-step-3">
+                                        <a href="#step-3" class="col-lg-2 col-md-2" data-content-url="{{ url_for('service_request.get_service_actions') }}">3</a>
+                                    </li>
+                                    <li id="display-step-4">
+                                        <a href="#step-4" class="col-lg-2 col-md-2" data-content-url="{{ url_for('service_request.get_service_form') }}">4</a>
+                                    </li>
+<!--                                     <li id="display-step-5">
+                                        <a href="#step-5" class="col-lg-2 col-md-2" data-content-url="{{ url_for('service_request.create_service_request') }}">5</a>
+                                    </li> -->
+                                </ul>
+                                
+                                <div>
+                                    <div id="step-1" class="" >
+                                        <div class="col-lg-2 col-md-2 step-item">
+                                            <div><img src="{{ url_for('static', filename='icon/lock-icon.png') }}" class="center"/></div>
+                                            <div>Account Request</div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 step-item">
+                                            <div><img src="{{ url_for('static', filename='icon/networking-icon.png') }}" class="center"/></div>
+                                            <div>IT System Request</div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 step-item">
+                                            <div><img src="{{ url_for('static', filename='icon/App-Store-icon.png') }}" class="center"/></div>
+                                            <div>ATM Request</div>
+                                        </div>
+                                    </div>
+                                    <div id="step-2" class="">
+                                        <h3> Please choose a job category : </h3><br>
+                                        <div class="col-lg-2 col-md-2 step-item">
+                                            <div><img src="{{ url_for('static', filename='icon/angel-icon.png') }}" class="center"/></div>
+                                            <div>Bank website password</div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 step-item">
+                                            <div>
+                                                <img src="{{ url_for('static', filename='icon/unlock-icon.png') }}" class="center"/>
+                                            </div>
+                                            <div>Internal website password</div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 step-item">
+                                            <div><img src="{{ url_for('static', filename='icon/monitoring-icon.png') }}" class="center"/></div>
+                                            <div>VDI User groups and system</div>
+                                        </div>
+                                    </div>
+                                     <div id="step-3" class="">
+                                        <h3> Please choose a action type : </h3><br>
+                                        <div class="col-lg-2 col-md-2 step-item">
+                                            <div><img src="{{ url_for('static', filename='icon/addition-icon.png') }}" class="center"/></div>
+                                            <div>New account</div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 step-item">
+                                            <div>
+                                                <img src="{{ url_for('static', filename='icon/recycle-bin-icon.png') }}" class="center"/>
+                                            </div>
+                                            <div>Delete Account</div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 step-item">
+                                            <div><img src="{{ url_for('static', filename='icon/edit-pen.png') }}" class="center"/></div>
+                                            <div>Change </div>
+                                        </div>
+                                    </div>
+                                    <div id="step-4" class="">
+                                        <h2>Step 4 Content</h2>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">My Details</div>
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr> <th>Name:</th> <td>Tim Smith</td> </tr>
+                                                    <tr> <th>Email:</th> <td>example@example.com</td> </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+<!--                                     <div id="step-5" class="">
+                                        <h2>Step 5 Content</h2>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">My Details</div>
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr> <th>Name:</th> <td>Tim Smith</td> </tr>
+                                                    <tr> <th>Email:</th> <td>example@example.com</td> </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+    </form>
+{% endblock %}
+
+{% block scripts %}
+    {{super()}}
+    <!-- SmartWizard CSS -->
+    <script src="{{ url_for('static', filename='vendor/smartwizard/js/jquery.smartWizard.js') }}"></script>
+    <script type="text/javascript">
+        var csrf_token = "{{ csrf_token() }}";
+        var currentStep;
+        var form_values = {};
+        $(document).ready(function(){
+            
+            // Step show event 
+            $("#smartwizard").on("showStep", function(e, anchorObject, stepNumber, stepDirection, stepPosition) {
+               // alert("You are on step "+stepNumber+" now");
+                currentStep = stepNumber +1;
+                if(stepPosition === 'first'){
+                   $("#prev-btn").addClass('disabled');
+                   $("#finish-btn").addClass('disabled');
+                }else if(stepPosition === 'final'){
+                   $("#next-btn").addClass('disabled');
+                   $("#finish-btn").removeClass('disabled');
+                }else if(stepPosition === 'form'){
+                    $("#next-btn").show()
+                }else{
+                   $("#prev-btn").removeClass('disabled');
+                   $("#next-btn").removeClass('disabled');
+                }
+            });
+            
+            // Toolbar extra buttons
+            var btnFinish = $('<button></button>').text('Submit')
+                                             .attr('id', 'finish-btn')
+                                             .addClass('btn btn-info')
+                                             .on('click', function(){
+                                                alert('submit success')
+                                                var elm = $('#smartwizard').smartWizard("getStep", 4);
+                                                var selPage = (elm.length>0) ? $(elm.attr("href"),this.main) : null;
+                                                var ajaxSettings = {
+                                                    url: "{{ url_for('service_request.create_service_request') }}",
+                                                    type: "POST",
+                                                    data: ({step_number : 4, form_values: form_values}),
+                                                    dataType: "text",
+                                                    beforeSend: function(xhr, settings){
+                                                        elm.parent('li').addClass('loading');
+                                                        if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type) && !this.crossDomain) {
+                                                            xhr.setRequestHeader("X-CSRFToken", csrf_token);
+                                                        }
+                                                    },
+                                                    error: function(jqXHR, status, message){
+                                                        elm.parent('li').removeClass('loading');
+                                                        $.error(message);
+                                                    },
+                                                    success: function(res){
+                                                        alert('submit success')
+                                                        if(res && res.length > 0){
+                                                            $('step-4').html(res);
+                                                            // elm.data('has-content',true);
+                                                            // selPage.html(res);
+                                                        }
+                                                        elm.parent('li').removeClass('loading');
+                                                        // mi._transitPage(idx);
+                                                    }
+                                                };
+                                                $.ajax(ajaxSettings);
+                                                return false;
+                                             });
+            // var btnFinish = $('<button></button>').text('Finish')
+            //                      .addClass('btn btn-info')
+            //                      .on('click', function(){ 
+            //                             if( !$(this).hasClass('disabled')){ 
+            //                                 var elmForm = $("#request-form");
+            //                                 alert('submitted form');
+            //                                 if(elmForm){
+            //                                     // elmForm.validator('validate'); 
+            //                                     // var elmErr = elmForm.find('.has-error');
+            //                                     if(elmErr && elmErr.length > 0){
+            //                                         alert('Oops we still have error in the form');
+            //                                         return false;    
+            //                                     }else{
+            //                                         alert('Great! we are ready to submit form');
+            //                                         elmForm.submit(function(){
+            //                                             data: {
+            //                                                 form['form_values[3]'] = 'xx';
+            //                                                 form['form_values[2]'] = 'yy';
+            //                                         }});
+            //                                         return false;
+            //                                     }
+            //                                 }
+            //                             }
+            //                         });
+            var btnCancel = $('<button></button>').text('Cancel')
+                                             .addClass('btn btn-danger')
+                                             .on('click', function(){ $('#smartwizard').smartWizard("reset"); });
+            
+            // Please note enabling option "showStepURLhash" will make navigation conflict for multiple wizard in a page.
+            // so that option is disabling => showStepURLhash: false
+
+            
+            // Smart Wizard 2
+            $('#smartwizard').smartWizard({ 
+                    selected: 0, 
+                    theme: 'circles',
+                    transitionEffect:'fade',
+                    contentCache: false,
+                    // contentURL: "{{ url_for('service_request.get_service_form') }}",
+                    toolbarSettings: {toolbarPosition: 'bottom', showNextButton: true} //, toolbarExtraButtons: [btnFinish, btnCancel]}
+            });
+
+            select_step = function(event) {
+                $(event.target).removeClass("chosen-item")
+                // $(event.target).click(function(){return False})
+                img_this = $(event.target).parent().parent()
+                if(!img_this.hasClass('step-item')) {return false}
+
+                $("#display-step-"+currentStep).children()[0].remove(); 
+                clone = img_this.clone(); 
+                clone.removeClass('step-item'); 
+                done = clone.appendTo($("#display-step-"+currentStep)); 
+                form_values[currentStep] = done.children()[1].innerHTML;
+                if (currentStep === 1) {$('#service_type').val(done.children()[1].innerHTML);}
+                if (currentStep === 2) {$('#job_classification').val(done.children()[1].innerHTML);}
+                if (currentStep === 3) {$('#service_action').val(done.children()[1].innerHTML);}
+                done.children()[1].remove()
+                next_step = currentStep + 1
+                $('#smartwizard').smartWizard("next");
+                // if(form_values[currentStep + 1] == null) {next_step = currentStep + 1}
+                //     else {next_step = 4}
+                window.location.href = "#step-"+ next_step;
+            }
+
+            show_border = function(event) {
+                img_this = $(event.target).parent().parent()
+                if(!img_this.hasClass('step-item')) {return false}
+                $(event.target).addClass("chosen-item")
+            }
+
+            hide_border = function(event) {
+                img_this = $(event.target).parent().parent()
+                if(!img_this.hasClass('step-item')) {return false}
+                $(event.target).removeClass("chosen-item")
+            }
+
+            $( ".step-item" ).click(function() {
+                $("#display-step-"+currentStep).children()[0].remove()
+                clone = $( this ).clone()
+                clone.removeClass()
+                done = $( this ).clone().appendTo($("#display-step-"+currentStep));
+                form_values[currentStep] = done.children()[1].innerHTML
+                done.children()[1].remove()
+                next_step = currentStep + 1
+                $('#smartwizard').smartWizard("next");
+                // if(form_values[currentStep + 1] == null) {next_step = currentStep + 1}
+                //     else {next_step = 4}
+                // window.location.href = "#step-"+ next_step;
+                // alert(currentStep)
+                // href_step1 = $("#display-step-"+currentStep).children()[0].offset()
+                // // choice1 = $("#choice1").offset()
+                // // alert(step_position.left)
+                // // // alert(step_position.top) 
+                // // var xi = $("#icon_step1").offset().left;
+                // // var yi = $("#icon_step1").offset().top;
+                // // $("href_step1").remove()
+                // // $( this ).css("z-index", "1000")
+                // // $( "#choice1" ).addClass('chosen-item');
+                // $("#display-step-"+currentStep).animate({
+                //     // width: "70%",
+                //     // opacity: 0.4,
+                //     left: href_step1.left - 395, //href_step1.left,
+                //     top: -href_step1.top,
+                //     // marginLeft: "0.6in",
+                //     // fontSize: "3em",
+                //     // borderWidth: "10px"
+                //     }, 500 );
+            });
+             
+            // $('img').each(function(index){
+            //     var xi = $(this).offset().left;
+            //     var yi = $(this).offset().top;
+            //     $(this).css('left', xi).css('top', yi);
+            //     $(this).click(function(){
+            //          $(this).animate({
+            //             left: -20,
+            //             top: -20
+            //          })
+            //     })
+            // });
+            $("#smartwizard").on("leaveStep", function(e, anchorObject, stepNumber, stepDirection) {
+                var elmForm = $("#form-step-" + stepNumber);
+                // stepDirection === 'forward' :- this condition allows to do the form validation 
+                // only on forward navigation, that makes easy navigation on backwards still do the validation when going next
+                // if(stepDirection === 'forward' && elmForm){
+                //     elmForm.validator('validate'); 
+                //     var elmErr = elmForm.children('.has-error');
+                //     if(elmErr && elmErr.length > 0){
+                //         // Form validation failed
+                //         return false;    
+                //     }
+                // }
+                return true;
+            });
+        });
+    </script>
+{% endblock %}
