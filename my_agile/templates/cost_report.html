@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %} retrieve people activities {% endblock %}
+
+{% block content %}
+    <form method="POST" action="{{ url_for('cost_report') }}">
+    
+        {{ form.hidden_tag() }}
+
+        <div class="row">
+        	<div class="col-md-2">{{ wtf.form_field(form.from_date) }}</div>
+        	<div class="col-md-2">{{ wtf.form_field(form.to_date) }}</div>
+        	<div class="col-md-2">{{ wtf.form_field(form.list_project) }}</div>
+    	</div>
+    	<div class="row">
+        	<div class="col-md-2">{{ wtf.form_field(form.run_report, class="btn btn-primary btn-block") }}</div>
+        	<div class="col-md-2">{{ wtf.form_field(form.run_detailed_report, class="btn btn-primary btn-block") }}</div>
+            {{excel_export | safe}}
+        </div>
+
+    	<div class="table-responsive">
+            {{data | safe}}
+        </div>
+
+    </form>
+{% endblock %}
