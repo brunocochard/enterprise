@@ -1,0 +1,462 @@
+{% extends "common/page_base.html" %}
+
+{% block content %}
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- <h3 class="page-header">Dashboard</h3> -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-green">
+                    <div class="panel-heading" \>
+                        <a href="request_timeline.html">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-tasks fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">3</div>
+                                <div>{%trans%}Pending Service Requests{%endtrans%}</div>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">View all</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-panel">
+                        <li class="right clearfix">
+                            <a href="request_timeline.html">
+                                <div>
+                                    <p>
+                                        <strong>ODA accounts</strong>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (info)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="right clearfix">
+                            <a href="request_timeline.html">
+                                <div>
+                                    <p>
+                                        <strong>User profile UI</strong>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="right clearfix">
+                            <a href="request_timeline.html">
+                                <div>
+                                    <p>
+                                        <strong>VDA to ODA transfer</strong>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-blue">
+                    <div class="panel-heading" \>
+                        <a href="request_timeline.html">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-comments fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">4</div>
+                                <div>Pending Inquries</div>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">View all</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-panel">
+                        <li class="right clearfix">
+                            <a href="request_timeline.html">
+                                <div>
+                                    <p>
+                                        <strong>ODA accounts</strong>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (info)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="right clearfix">
+                            <a href="request_timeline.html">
+                                <div>
+                                    <p>
+                                        <strong>User profile UI</strong>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="right clearfix">
+                            <a href="request_timeline.html">
+                                <div>
+                                    <p>
+                                        <strong>VDA to ODA transfer </strong>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="right clearfix">
+                            <a href="request_timeline.html">
+                                <div>
+                                    <p>
+                                        <strong>remove dependency to SDA</strong>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading" \>
+                        <a href="request_timeline.html">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-tasks fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">8</div>
+                                <div>Pending Approvals</div>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">View all</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-panel">
+                        <li class="right clearfix">
+                            <a href="request_timeline.html">
+                                <div>
+                                    <p>
+                                        <strong>Verify deployment</strong>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (info)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="right clearfix">
+                            <a href="request_timeline.html">
+                                <div>
+                                    <p>
+                                        <strong>Deploy ODA accounts</strong>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (info)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="right clearfix">
+                            <a href="request_timeline.html">
+                                <div>
+                                    <p>
+                                        <strong>UAT done</strong>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div
+>                            </a>
+                        </li>
+                        <li class="right clearfix">
+                            <a href="request_timeline.html">
+                                <div>
+                                    <p>
+                                        <strong>UAT done </strong>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="right clearfix">
+                            <a href="request_timeline.html">
+                                <div>
+                                    <p>
+                                        <strong>UAT canceled</strong>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="right clearfix">
+                            <a href="request_timeline.html">
+                                <div>
+                                    <p>
+                                        <strong>UAT canceled</strong>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="right clearfix">
+                            <a href="request_timeline.html">
+                                <div>
+                                    <p>
+                                        <strong>Dev Complete</strong>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-red">
+                    <div class="panel-heading" \>
+                        <a href="request_timeline.html">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-fire-extinguisher fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{ data["numIncidents"] }}</div>
+                                <div>Ongoing incidents</div>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">View all</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-panel">
+            			{{data["dropdownIncidents"] | safe}}
+            		</ul>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-bar-chart-o fa-fw"></i> Ongoing incidents
+                        <div class="pull-right">
+                                <button type="button" class="btn btn-default btn-xs" >
+                                    New Request
+                                </button>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                    More actions
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu pull-right" role="menu">
+                                    <li><a href="#">Request Time Report</a>
+                                    </li>
+                                    <li><a href="#">Request Cost Report</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li><a href="https://itsm/arsys/shared/login.jsp?/arsys/">Go to ITSM</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="table-responsive">
+            						{{data["tableIncidents"] | safe}}
+            					</div>
+                                <!-- /.table-responsive -->
+                            </div>
+                            <!-- /.col-lg-4 (nested) -->
+                            <!-- <div class="col-lg-6"> -->
+                                <!-- <div id="morris-bar-chart"></div> -->
+                            <!-- </div> -->
+                            <!-- /.col-lg-8 (nested) -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel --> 
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-bar-chart-o fa-fw"></i> ITIL Monitoring
+                        <div class="pull-right">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                    Actions
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu pull-right" role="menu">
+                                    <li><a href="#">Action</a>
+                                    </li>
+                                    <li><a href="#">Another action</a>
+                                    </li>
+                                    <li><a href="#">Something else here</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div id="morris-area-chart"></div>
+                        <!-- <div id="morris-bar-chart"></div> -->
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+                
+            </div>
+            <!-- /.col-lg-8 -->
+            <div class="col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-bell fa-fw"></i> Notifications Panel
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item">
+                                <i class="fa fa-comment fa-fw"></i> New Comment
+                                <span class="pull-right text-muted small"><em>4 minutes ago</em>
+                                </span>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                <span class="pull-right text-muted small"><em>27 minutes ago</em>
+                                </span>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <i class="fa fa-tasks fa-fw"></i> New Task
+                                <span class="pull-right text-muted small"><em>43 minutes ago</em>
+                                </span>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                <span class="pull-right text-muted small"><em>11:32 AM</em>
+                                </span>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <i class="fa fa-bolt fa-fw"></i> Server Crashed!
+                                <span class="pull-right text-muted small"><em>11:13 AM</em>
+                                </span>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <i class="fa fa-warning fa-fw"></i> Server Not Responding
+                                <span class="pull-right text-muted small"><em>10:57 AM</em>
+                                </span>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <i class="fa fa-shopping-cart fa-fw"></i> New Change Request
+                                <span class="pull-right text-muted small"><em>9:49 AM</em>
+                                </span>
+                            </a>
+                        </div>
+                        <!-- /.list-group -->
+                        <a href="#" class="btn btn-default btn-block">View All Alerts</a>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-bar-chart-o fa-fw"></i> Ongoing Incidents
+                    </div>
+                    <div class="panel-body">
+                        <div id="morris-donut-chart"></div>
+                        <a href="#" class="btn btn-default btn-block">View Details</a>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+            </div>
+            <!-- /.col-lg-4 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /#page-wrapper -->
+{% endblock %}
