@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %} retrieve people activities {% endblock %}
+
+{% block content %}
+    <form method="POST" action="{{ url_for('time_graph') }}">
+    
+        {{ form.hidden_tag() }}
+
+        <div class="row">
+        	<div class="col-md-2">{{ wtf.form_field(form.from_date) }}</div>
+        	<div class="col-md-2">{{ wtf.form_field(form.to_date) }}</div>
+        	<div class="col-md-2">{{ wtf.form_field(form.list_project) }}</div>
+    	</div>
+    	<div class="row">
+        	<div class="col-md-2">{{ wtf.form_field(form.run_report, class="btn btn-primary btn-block") }}</div>
+        	<div class="col-md-2">{{ wtf.form_field(form.run_detailed_report, class="btn btn-primary btn-block") }}</div>
+        </div>
+
+    	<div class="row">
+            <div class="col-md-12">
+                <div class="svg-container" align="left">
+                    <embed type="image/svg+xml" src={{graph_data|safe}} class="svg-content" />
+                </div>
+            </div>
+    </div>
+
+    </form>
+{% endblock %}
