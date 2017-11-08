@@ -1,5 +1,8 @@
 # enterprise
 
+    Status: Project under development, only prototype capabilities for the moment
+    next tasks: merge my_itil and my_agile, get ready for prod
+
 # Configuring SMTP
 
 Copy the `local_settings_example.py` file to `local_settings.py`.
