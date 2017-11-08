@@ -1,0 +1,252 @@
+{% extends "common/page_base.html" %}
+
+{% block content %}
+{% from "common/form_macros.html" import render_field, render_submit_field %}
+<form action="" method="POST" novalidate formnovalidate class="form" role="form" enctype="multipart/form-data">
+    <div id="page-wrapper">
+		<div class="row">
+	        <div class="col-lg-6">
+	            <div class="panel panel-default">
+	                <div class="panel-heading">
+	                    <i class="fa fa-bar-chart-o fa-fw"></i> Timeline
+	                    <div class="pull-right">
+	                            <button type="button" class="btn btn-default btn-xs" >
+	                                Cancel Request
+	                            </button>
+	                        <div class="btn-group">
+	                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+	                                More actions
+	                                <span class="caret"></span>
+	                            </button>
+	                            <ul class="dropdown-menu pull-right" role="menu">
+	                                <li><a href="#">Request Time Report</a>
+	                                </li>
+	                                <li><a href="#">Request Cost Report</a>
+	                                </li>
+	                                <li class="divider"></li>
+	                                <li><a href="#">Contact CAB</a>
+	                                </li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                </div>
+	                <!-- /.panel-heading -->
+	                <div class="panel-body">
+	                    <ul class="timeline">
+	                        <li class="timeline">
+	                            <div class="timeline-badge success"><i class="fa fa-graduation-cap"></i>
+	                            </div>
+	                            <div class="timeline-panel">
+	                                <div class="timeline-heading">
+	                                    <h4 class="timeline-title">Request marked complete</h4>
+	                                    <p><small class="text-muted"><i class="fa fa-clock-o"></i> Just now by Bruno</small>
+	                                    </p>
+	                                </div>
+	                            </div>
+	                        </li>
+	                        <li class="timeline-inverted">
+	                            <div class="timeline-badge info"><i class="fa fa-save"></i>
+	                            </div>
+	                            <div class="timeline-panel">
+	                                <div class="timeline-heading">
+	                                    <h4 class="timeline-title">Change Deployed
+	                                    <div class="pull-right">
+	                                        <div class="btn-group">
+	                                            <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+	                                                <i class="fa fa-gear"></i> <span class="caret"></span>
+	                                            </button>
+	                                            <ul class="dropdown-menu" role="menu">
+	                                                <li><a href="#">Accept</a></li>
+	                                                <li><a href="#">Reject</a></li>
+	                                                <li class="divider"></li>
+	                                                <li><a href="#">Contact DC</a></li>
+	                                            </ul>
+	                                        </div>
+	                                    </div></h4>
+	                                    <p><small class="text-muted"><i class="fa fa-clock-o"></i> 11 hours ago via AgileXchange</small>
+	                                    </p>
+	                                </div>
+	                                <div class="timeline-body">
+	                                    <p>Confirm acceptance of the change</p>
+	                                    
+	                                </div>
+	                            </div>
+	                        </li>
+	                        <li class="timeline">
+	                            <div class="timeline-badge info"><i class="fa fa-save"></i>
+	                            </div>
+	                            <div class="timeline-panel">
+	                                <div class="timeline-heading">
+	                                    <h4 class="timeline-title">User Acceptance Testing
+	                                    <div class="pull-right">
+	                                        <div class="btn-group">
+	                                            <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+	                                                <i class="fa fa-gear"></i> <span class="caret"></span>
+	                                            </button>
+	                                            <ul class="dropdown-menu" role="menu">
+	                                                <li><a href="#">Completed</a></li>
+	                                                <li><a href="#">Rejected</a></li>
+	                                                <li class="divider"></li>
+	                                                <li><a href="#">Contact Developer</a></li>
+	                                            </ul>
+	                                        </div>
+	                                    </div></h4>
+	                                    <p><small class="text-muted"><i class="fa fa-clock-o"></i> 11 hours ago via AgileXchange</small>
+	                                    </p>
+	                                </div>
+	                                <div class="timeline-body">
+	                                    <p>Confirm acceptance of the change</p>
+	                                    
+	                                </div>
+	                            </div>
+	                        </li>
+	                        <li class="timeline-inverted">
+	                            <div class="timeline-badge"><i class="fa fa-check"></i>
+	                            </div>
+	                            <div class="timeline-panel">
+	                                <div class="timeline-heading">
+	                                    <h4 class="timeline-title"><NAV>Implementation</NAV></h4>
+	                                    <p><small class="text-muted"><i class="fa fa-clock-o"></i> 11 hours ago via AgileXchange</small>
+	                                    </p>
+	                                </div>
+	                            </div>
+	                        </li>
+	                        <li>
+	                            <div class="timeline-badge danger"><i class="fa fa-bomb"></i>
+	                            </div>
+	                            <div class="timeline-panel">
+	                                <div class="timeline-heading">
+	                                    <h4 class="timeline-title">Change in requirement</h4>
+	                                </div>
+	                                <div class="timeline-body">
+	                                    <p>Please show pop-up explaining user is clock-in to avoid clock again</p>
+	                                </div>
+	                            </div>
+	                        </li>
+	                        <li class="timeline-inverted">
+	                            <div class="timeline-panel">
+	                                <div class="timeline-heading">
+	                                    <h4 class="timeline-title">Evaluated
+	                                    <div class="pull-right">
+	                                        <div class="btn-group">
+	                                            <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+	                                                <i class="fa fa-gear"></i> <span class="caret"></span>
+	                                            </button>
+	                                            <ul class="dropdown-menu" role="menu">
+	                                                <li><a href="#">Accept</a></li>
+	                                                <li><a href="#">Reject</a></li>
+	                                                <li class="divider"></li>
+	                                                <li><a href="#">Contact DC</a></li>
+	                                            </ul>
+	                                        </div>
+	                                    </div></h4>
+	                                    <p><small class="text-muted"><i class="fa fa-clock-o"></i> Bruno Via AgileXchange</small>
+	                                    </p>
+	                                </div>
+	                                <div class="timeline-body">
+	                                    <p>OK that's possible. It shoudl required 2mandays work</p>
+	                                </div>
+	                            </div>
+	                        </li>
+	                        <li class="timeline">
+	                            <div class="timeline-badge warning"><i class="fa fa-credit-card"></i>
+	                            </div>
+	                            <div class="timeline-panel">
+	                                <div class="timeline-heading">
+	                                    <h4 class="timeline-title">New Requirement: Auto-Checkin</h4>
+	                                </div>
+	                                <div class="timeline-body">
+	                                    <p>New Feature for iHR to be able to have checkin while first logging in the morning</p>
+	                                </div>
+	                            </div>
+	                        </li>
+	                    </ul>
+	                </div>
+	                <!-- /.panel-body -->
+	            </div>
+	            <!-- /.panel -->
+	        </div>
+	        <div class="col-lg-6">
+	            <div class="panel panel-default">
+	                <div class="panel-heading">
+	                    <i class="fa fa-bar-chart-o fa-fw"></i> Incident {{ form.request_id.data }}
+	                    {{ form.hidden_tag() }}
+	                    <div class="pull-right">
+	                            <button type="button" class="btn btn-default btn-xs" >
+	                                New Request
+	                            </button>
+	                        <div class="btn-group">
+	                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+	                                More actions
+	                                <span class="caret"></span>
+	                            </button>
+	                            <ul class="dropdown-menu pull-right" role="menu">
+	                                <li><a href="#">Request Time Report</a>
+	                                </li>
+	                                <li><a href="#">Request Cost Report</a>
+	                                </li>
+	                                <li class="divider"></li>
+	                                <li><a href="#">Contact CAB</a>
+	                                </li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="panel-body">
+	                	<div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                {{ render_field(form.request_id, tabindex=200) }}
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                {{ render_field(form.status, tabindex=210) }}
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                {{ render_field(form.service_type, tabindex=230) }}
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                {{ render_field(form.reporter_source, tabindex=240) }}
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                {{ render_field(form.impact, tabindex=250) }}
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                {{ render_field(form.urgency, tabindex=260) }}
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                {{ render_field(form.description, tabindex=270) }}
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                {{ render_submit_field(form.submit_incident, tabindex=280) }}
+                            </div>
+                        </div>
+	                </div>
+	            </div>
+	        <!-- /.col-lg-8 -->
+	            <div class="panel panel-default">
+	                <div class="panel-heading">
+	                    <i class="fa fa-bar-chart-o fa-fw"></i> Last updates
+	                </div>
+	                <!-- /.panel-heading -->
+	                <div class="panel-body">
+	                    <div class="row">
+	                        <div class="col-lg-12">
+	                            <div class="table-responsive">
+            						{{data["tableIncidents"] | safe}}
+	                            </div>
+	                            <!-- /.table-responsive -->
+	                        </div>
+	                        <!-- /.col-lg-12 (nested) -->
+	                    </div>
+	                    <!-- /.row -->
+	                </div>
+	                <!-- /.panel-body -->
+	            </div>
+	            <!-- /.panel --> 
+	            
+	        </div>
+	        <!-- /.col-lg-8 -->
+	    </div>
+	    <!-- /.row -->
+	</div>
+</form>
+{% endblock %}
