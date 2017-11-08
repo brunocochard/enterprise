@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %} Predictions on features {% endblock %}
+
+{% block content %}
+<form method="POST" action="{{ url_for('feature_leadtime') }}">
+    {{ form.hidden_tag() }}
+    <div class="row">
+        <div class="col-md-2">{{ wtf.form_field(form.title) }}</div>
+        <div class="col-md-2">{{ wtf.form_field(form.description) }}</div>
+        <div class="col-md-2">{{ wtf.form_field(form.list_project) }}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">{{ wtf.form_field(form.create_request, class="btn btn-primary btn-block") }}</div>
+        </div>
+    <div class="row">
+            <div class="col-md-12  text-center"><h2>My active requests</h2></div>
+    </div>
+    <div class="row">   
+            <div class="col-md-4 text-center"><h2>{{ form.confidence }}</h2></div>
+        </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="svg-container" align="left">
+                <embed type="image/svg+xml" src={{graph_data|safe}} class="svg-content"/>
+            </div>
+            </div>
+    </div>
+
+    <div class="row">
+            <div class="col-md-12">{{ data | safe}}</div>
+    </div>
+</form>
+{% endblock %}
+
+
