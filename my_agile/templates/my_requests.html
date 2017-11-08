@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %} Home page {% endblock %}
+
+{% block content %}
+
+<form method="POST" action="{{ url_for('my_requests') }}">
+    
+        {{ form.hidden_tag() }}
+
+        <div class="row">
+            <div class="col-md-2">{{ wtf.form_field(form.title) }}</div>
+            <div class="col-md-2">{{ wtf.form_field(form.description) }}</div>
+            <div class="col-md-2">{{ wtf.form_field(form.list_project) }}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">{{ wtf.form_field(form.create_request, class="btn btn-primary btn-block") }}</div>
+        </div>
+
+    <div class="row">
+            <div class="col-md-6  text-center"><h2>My active requests</h2></div>
+            <div class="col-md-6  text-center"><h2>My pending requests</h2></div>
+    </div>
+
+    <div class="row">
+            <div class="col-md-6">{{ data[0] | safe}}</div>
+            <div class="col-md-6">{{ data[1] | safe}}</div>
+    </div>
+
+    </form>
+    
+
+    
+
+{% endblock %}
+
+
