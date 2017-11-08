@@ -1,0 +1,28 @@
+{% from "common/form_macros.html" import render_field, render_submit_field %}
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        <h2> {{ request_title }} </h2>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        {{ render_field(form.request_id, tabindex=200) }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-2 col-md-2">
+        {{ render_field(form.nt_account, tabindex=210) }}
+    </div>
+    <div class="col-lg-2 col-md-2">
+        {{ render_field(form.attachment, tabindex=220) }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4 col-md-4">
+        {{ render_field(form.notes, tabindex=210) }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        {{ render_submit_field(form.submit, tabindex=230) }}
+    </div>
+    </div>
+</div>
