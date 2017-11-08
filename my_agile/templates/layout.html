@@ -1,0 +1,23 @@
+<!doctype html>
+
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block navbar %}
+    {{ nav.nav_bar.render(renderer='custom') }}
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='devops-style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='table-style.css')}}">
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{{url_for('static', filename='jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='socket.io.min.js')}}"></script>
+<!--     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src="{{url_for('static', filename='notification-script.js')}}"></script>
+    
+{% endblock %}
