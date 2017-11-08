@@ -1,0 +1,13 @@
+flask
+flask-login
+flask-session
+flask-bootstrap
+flask-wtf
+flask-nav
+flask-socketio
+pygal
+requests
+requests_ntlm
+eventlet
+flask-excel
+pyexcel-xls
