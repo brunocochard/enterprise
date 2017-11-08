@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %} log in DevOps Hub {% endblock %}
+
+{% block content %}
+
+    <form method="POST" action="{{ url_for('cub_login') }}">
+        {{ form.hidden_tag() }}
+
+        <div class="row">
+        	<div class="col-md-2">{{ wtf.form_field(form.username) }}</div>
+        	<div class="col-md-2">{{ wtf.form_field(form.password) }}</div>
+		</div>
+		<div class="row">	
+        	<div class="col-md-4 text-center"><h2>{{ form.error_message }}</h2></div>
+		</div>
+        <div class="row">	
+        	<div class="col-md-4">{{ wtf.form_field(form.login_tfs, class="btn btn-primary btn-block") }}</div>
+		</div>
+
+        
+    </form>
+    
+{% endblock %}
