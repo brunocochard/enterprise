@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %} test pygal graph {% endblock %}
+
+{% block content %}
+	<div class="row">
+    	<div class="col-md-6">
+  			<div class="svg-container" align="left">
+				<embed type="image/svg+xml" src={{graph_data|safe}} class="svg-content"/>
+  			</div>
+			</div>
+	</div>
+{% endblock %}
