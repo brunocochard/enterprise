@@ -1,7 +1,8 @@
 # enterprise
 
-    Status: Project under development, only prototype capabilities for the moment
-    next tasks: merge my_itil and my_agile, get ready for prod
+    Description: Pet project with only prototype capabilities
+    Status: Sleeping
+    future tasks: merge my_itil and my_agile, get ready for prod
 
 # Configuring SMTP
 
